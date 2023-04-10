@@ -1,24 +1,13 @@
 App(
-    appid="example_advanced_plugins",
-    name="Example: advanced plugins",
+    appid="weather_station",
+    name="Weather Station",
     apptype=FlipperAppType.EXTERNAL,
-    entry_point="example_advanced_plugins_app",
-    stack_size=2 * 1024,
-    fap_category="Examples",
-)
-
-App(
-    appid="advanced_plugin1",
-    apptype=FlipperAppType.PLUGIN,
-    entry_point="advanced_plugin1_ep",
-    requires=["example_advanced_plugins"],
-    sources=["plugin1.c"],
-)
-
-App(
-    appid="advanced_plugin2",
-    apptype=FlipperAppType.PLUGIN,
-    entry_point="advanced_plugin2_ep",
-    requires=["example_advanced_plugins"],
-    sources=["plugin2.c"],
+    targets=["f7"],
+    entry_point="weather_station_app",
+    requires=["gui"],
+    stack_size=4 * 1024,
+    order=50,
+    fap_icon="weather_station_10px.png",
+    fap_category="Sub-GHz",
+    fap_icon_assets="images",
 )
